@@ -562,8 +562,10 @@ server:
     automountServiceAccountToken: true
 
   ingress:
-    enabled: false
-    annotations: {}
+    enabled: true
+    annotations: 
+      kubernetes.io/ingress.class: nginx
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
     labels: {}
     ingressClassName: ""
 
@@ -572,7 +574,7 @@ server:
     ## Secrets must be manually created in the namespace
     ##
     hosts:
-      []
+      - host: argo.codebulb.nl
       # - argocd.example.com
     paths:
       - /
