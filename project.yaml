@@ -18,3 +18,8 @@ spec:
   namespaceResourceWhitelist:
   - group: '*'
     kind: '*'
+  namespaceResourceBlacklist:
+  - group: tekton.dev
+    kind: TaskRun
+  - group: tekton.dev
+    kind: PipelineRun
