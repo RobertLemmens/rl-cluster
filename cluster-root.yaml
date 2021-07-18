@@ -16,6 +16,6 @@ spec:
     namespace: rl-cluster
   syncPolicy:
     automated:
-      selfheal: true
+      selfHeal: true
       prune: true
       allowEmpty: true
