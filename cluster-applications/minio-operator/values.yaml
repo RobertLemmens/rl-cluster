@@ -55,7 +55,7 @@ tenants:
       tag: RELEASE.2021-06-17T00-10-46Z
       pullPolicy: IfNotPresent
     ## Customize namespace for tenant deployment
-    namespace: rl-cluster
+    namespace: minio
     ## Customize any private registry image pull secret.
     ## currently only one secret registry is supported
     imagePullSecret: {}
@@ -71,7 +71,7 @@ tenants:
         ## volumesPerServer specifies the number of volumes attached per MinIO Tenant Pod / Server.
         volumesPerServer: 2
         ## size specifies the capacity per volume
-        size: 3Gi
+        size: 5Gi
         ## storageClass specifies the storage class name to be used for this pool
         storageClassName: civo-volume
         ## Used to specify a toleration for a pod
