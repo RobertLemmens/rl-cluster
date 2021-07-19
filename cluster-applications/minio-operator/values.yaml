@@ -71,7 +71,7 @@ tenants:
         ## volumesPerServer specifies the number of volumes attached per MinIO Tenant Pod / Server.
         volumesPerServer: 2
         ## size specifies the capacity per volume
-        size: 5Gi
+        size: 3Gi
         ## storageClass specifies the storage class name to be used for this pool
         storageClassName: civo-volume
         ## Used to specify a toleration for a pod
