@@ -90,7 +90,7 @@ s3:
  regionEndpoint: minio1-hl.minio.svc.cluster.local:9000
  bucket: registry
  encrypt: false
- secure: false
+ secure: true
 
 # Options for swift storage type:
 # swift:
