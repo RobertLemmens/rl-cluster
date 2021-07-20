@@ -68,8 +68,8 @@ storage: s3
 # Set this to name of secret for tls certs
 # tlsSecretName: registry.docker.example.com
 secrets:
-  haSharedSecret: ""
-  htpasswd: ""
+  haSharedSecret: "test"
+  htpasswd: "test"
 # Secrets for Azure
 #   azure:
 #     accountName: ""
