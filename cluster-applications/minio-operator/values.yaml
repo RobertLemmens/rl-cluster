@@ -95,12 +95,11 @@ tenants:
     # pool secrets
     secrets:
       enabled: true
+      create: false
       name: minio1-secret
-      accessKey: minio
-      secretKey: minio123
     # pool metrics to be read by Prometheus
     metrics:
-      enabled: false
+      enabled: true
       port: 9000
     certificate:
       ## Use this field to provide one or more external CA certificates. This is used by MinIO
@@ -145,7 +144,7 @@ tenants:
         pullPolicy: IfNotPresent
       replicaCount: 1
       secrets:
-        enabled: true
+        enabled: false
         name: console-secret
         passphrase: SECRET
         salt: SECRET
