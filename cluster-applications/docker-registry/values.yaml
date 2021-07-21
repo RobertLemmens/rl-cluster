@@ -31,20 +31,21 @@ service:
   annotations: {}
   # foo.io/bar: "true"
 ingress:
-  enabled: false
+  enabled: true
   path: /
   # Used to create an Ingress record.
   hosts:
-    - chart-example.local
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+    - registry.codebulb.nl
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/proxy-body-size: 1g
   labels: {}
   tls:
     # Secrets must be manually created in the namespace.
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
+    - secretName: registry-tls
+      hosts:
+        - registry.codebulb.nl
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
