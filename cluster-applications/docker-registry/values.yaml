@@ -77,8 +77,7 @@ secrets:
 #     container: ""
 # Secrets for S3 access and secret keys
   s3:
-    accessKey: "registry-user"
-    secretKey: "test1234"
+    secretName: "docker-s3-user"
 # Secrets for Swift username and password
 #   swift:
 #     username: ""
