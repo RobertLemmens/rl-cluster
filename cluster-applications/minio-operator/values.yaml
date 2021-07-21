@@ -95,12 +95,11 @@ tenants:
     # pool secrets
     secrets:
       enabled: true
+      create: false
       name: minio1-secret
-      accessKey: minio
-      secretKey: minio123
     # pool metrics to be read by Prometheus
     metrics:
-      enabled: false
+      enabled: true
       port: 9000
     certificate:
       ## Use this field to provide one or more external CA certificates. This is used by MinIO
@@ -113,7 +112,7 @@ tenants:
       externalCertSecret: {}
       ## Enable automatic Kubernetes based certificate generation and signing as explained in
       ## https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster
-      requestAutoCert: true
+      requestAutoCert: false
       ## This field is used only when "requestAutoCert" is set to true. Use this field to set CommonName
       ## for the auto-generated certificate. Internal DNS name for the pod will be used if CommonName is
       ## not provided. DNS name format is *.minio.default.svc.cluster.local
@@ -145,7 +144,7 @@ tenants:
         pullPolicy: IfNotPresent
       replicaCount: 1
       secrets:
-        enabled: true
+        enabled: false
         name: console-secret
         passphrase: SECRET
         salt: SECRET
