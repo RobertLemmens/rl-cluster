@@ -87,10 +87,10 @@ secrets:
 # Options for s3 storage type:
 s3:
  region: us-east-1
- regionEndpoint: minio.codebulb.nl
+ regionEndpoint: minio.minio.svc.cluster.local:80
  bucket: registry
  encrypt: false
- secure: true
+ secure: false
 
 # Options for swift storage type:
 # swift:
