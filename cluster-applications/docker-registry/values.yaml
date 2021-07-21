@@ -69,7 +69,7 @@ storage: s3
 # tlsSecretName: registry.docker.example.com
 secrets:
   haSharedSecret: ""
-  htpasswd: ""
+  htpasswd: "docker-registry-auth"
 # Secrets for Azure
 #   azure:
 #     accountName: ""

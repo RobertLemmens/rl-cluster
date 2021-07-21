@@ -206,7 +206,7 @@ spec:
 {{- if .Values.secrets.htpasswd }}
         - name: auth
           secret:
-            secretName: {{ template "docker-registry.fullname" . }}-secret
+            secretName: docker-registry-auth
             items:
             - key: htpasswd
               path: htpasswd
