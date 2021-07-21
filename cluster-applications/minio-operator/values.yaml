@@ -144,7 +144,7 @@ tenants:
         pullPolicy: IfNotPresent
       replicaCount: 1
       secrets:
-        enabled: false
+        enabled: true
         name: console-secret
         passphrase: SECRET
         salt: SECRET
