@@ -77,20 +77,20 @@ secrets:
 #     accountKey: ""
 #     container: ""
 # Secrets for S3 access and secret keys
-  s3:
-    secretName: "docker-s3-user"
+  # s3:
+    # secretName: "docker-s3-user"
 # Secrets for Swift username and password
 #   swift:
 #     username: ""
 #     password: ""
 
 # Options for s3 storage type:
-s3:
- region: us-east-1
- regionEndpoint: minio.codebulb.nl
- bucket: registry
- encrypt: false
- secure: true
+# s3:
+ # region: us-east-1
+ # regionEndpoint: minio.codebulb.nl
+ # bucket: registry
+ # encrypt: false
+ # secure: true
 
 # Options for swift storage type:
 # swift:
