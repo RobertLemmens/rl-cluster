@@ -8,7 +8,7 @@ metadata:
 spec:
   project: rl-cluster
   source:
-    repoURL: git@github.com:RobertLemmens/rl-cluster.git
+    repoURL: https://github.com/RobertLemmens/rl-cluster
     targetRevision: HEAD
     path: cluster-root
   destination:
