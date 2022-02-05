@@ -80,7 +80,9 @@ controller:
 
   ## Annotations to be added to controller pods
   ##
-  podAnnotations: {}
+  podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8082"
 
   ## Labels to be added to controller pods
   ##
@@ -249,7 +251,9 @@ dex:
 
   ## Annotations to be added to the Dex server pods
   ##
-  podAnnotations: {}
+  podAnnotations: 
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "5558"
 
   ## Labels to be added to the Dex server pods
   ##
@@ -454,7 +458,10 @@ server:
 
   ## Annotations to be added to controller pods
   ##
-  podAnnotations: {}
+  podAnnotations: 
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8083"
+
 
   ## Labels to be added to controller pods
   ##
@@ -852,7 +859,9 @@ repoServer:
 
   ## Annotations to be added to repo server pods
   ##
-  podAnnotations: {}
+  podAnnotations: 
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '8084'
 
   ## Labels to be added to repo server pods
   ##
