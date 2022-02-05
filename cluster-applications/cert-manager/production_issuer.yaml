@@ -23,7 +23,7 @@ spec:
           solverName: transip
           config:
             accountName: eksitnl
-            ttls: 300
+            ttl: 60
             privateKeySecretRef:
               name: transip-credentials
               key: privateKey
