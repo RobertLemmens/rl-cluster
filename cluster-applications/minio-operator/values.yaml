@@ -38,7 +38,7 @@ console:
     runAsUser: 1000
     runAsNonRoot: true
   ingress:
-    enabled: true
+    enabled: false
     labels: {}
     annotations: {}
     tls: []
