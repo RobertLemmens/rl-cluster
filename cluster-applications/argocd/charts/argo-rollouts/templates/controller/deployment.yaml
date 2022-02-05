@@ -8,9 +8,11 @@ metadata:
 spec:
   selector:
     matchLabels:
+      app.kubernetes.io/component: {{ .Values.controller.component }}
       {{- include "argo-rollouts.selectorLabels" . | nindent 6 }}
   strategy:
     type: Recreate
+  replicas: {{ .Values.controller.replicas }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -19,6 +21,7 @@ spec:
       {{- end }}
       labels:
         {{- include "argo-rollouts.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: {{ .Values.controller.component }}
         {{- range $key, $value := .Values.podLabels }}
         {{ $key }}: {{ $value | quote }}
         {{- end }}
@@ -30,19 +33,32 @@ spec:
       serviceAccountName: {{ include "argo-rollouts.serviceAccountName" . }}
       containers:
       - image: "{{ .Values.controller.image.registry }}/{{ .Values.controller.image.repository }}:{{ default .Chart.AppVersion .Values.controller.image.tag }}"
-        {{- if not .Values.clusterInstall }}
         args:
+        {{- if not .Values.clusterInstall }}
         - --namespaced
+        {{- end }}
+        {{- if gt .Values.controller.replicas 1.0 }}
+        - --leader-elect
+        {{- end }}
+        {{- with .Values.controller.extraArgs }}
+        {{- toYaml . | nindent 8 }}
         {{- end }}
         imagePullPolicy: {{ .Values.controller.image.pullPolicy }}
         name: argo-rollouts
         ports:
         - containerPort: 8090
           name: metrics
+        livenessProbe:
+          {{- toYaml .Values.controller.livenessProbe | nindent 10 }}
+        readinessProbe:
+          {{- toYaml .Values.controller.readinessProbe | nindent 10 }}
         securityContext:
           {{- toYaml .Values.containerSecurityContext | nindent 10 }}
         resources:
           {{- toYaml .Values.controller.resources | nindent 10 }}
+      {{- with .Values.controller.extraContainers }}
+        {{- toYaml . | nindent 6 }}
+      {{- end }}
       {{- if .Values.controller.nodeSelector }}
       nodeSelector:
         {{- toYaml .Values.controller.nodeSelector | nindent 8 }}
