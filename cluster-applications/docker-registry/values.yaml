@@ -85,12 +85,12 @@ secrets:
 #     password: ""
 
 # Options for s3 storage type:
-# s3:
- # region: us-east-1
- # regionEndpoint: minio.codebulb.nl
- # bucket: registry
- # encrypt: false
- # secure: true
+s3:
+ region: us-east-1
+ regionEndpoint: minio.codebulb.nl
+ bucket: registry
+ encrypt: false
+ secure: true
 
 # Options for swift storage type:
 # swift:
