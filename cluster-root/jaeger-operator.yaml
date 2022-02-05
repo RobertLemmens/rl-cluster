@@ -8,7 +8,7 @@ metadata:
 spec:
   project: rl-cluster
   source:
-    path: cluster-applications/jaeger/charts/jaeger-operator
+    path: cluster-applications/jaeger-helm/charts/jaeger-operator
     repoURL: https://github.com/RobertLemmens/rl-cluster.git
     targetRevision: HEAD
   destination:
