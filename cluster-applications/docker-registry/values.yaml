@@ -64,7 +64,7 @@ persistence:
   # storageClass: '-'
 
 # set the type of filesystem to use: filesystem, s3
-storage: filesystem
+storage: s3
 
 # Set this to name of secret for tls certs
 # tlsSecretName: registry.docker.example.com
@@ -77,8 +77,8 @@ secrets:
 #     accountKey: ""
 #     container: ""
 # Secrets for S3 access and secret keys
-  # s3:
-    # secretName: "docker-s3-user"
+  s3:
+    secretName: "docker-s3-user"
 # Secrets for Swift username and password
 #   swift:
 #     username: ""
