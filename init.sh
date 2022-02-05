@@ -14,3 +14,15 @@ kubectl rollout status deployment argo-cd-argocd-server -n argocd
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
+
+# wait for nginx
+echo '
+  apiVersion: v1
+  kind: ConfigMap
+  data:
+    enable-opentracing: "true"
+    jaeger-collector-host: simplest-agent.jaeger.svc.cluster.local              
+  metadata:
+    name: ingress-nginx-controller
+    namespace: ingress-nginx
+  ' | kubectl replace -f -
