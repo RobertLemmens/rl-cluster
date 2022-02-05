@@ -17,12 +17,12 @@ controller:
   name: controller
   image:
     registry: k8s.gcr.io
-    image: opentracing/nginx-opentracing
+    image: ingress-nginx/controller
     ## for backwards compatibility consider setting the full image url via the repository value below
     ## use *either* current default registry/image or repository format or installing chart by providing the values.yaml will fail
     ## repository:
-    tag: "latest"
-    digest: sha256:660e6f11507f7ae6f594acfe10b981b78d9db79eec6c969a2605d066ff679528
+    tag: "v1.1.1"
+    digest: sha256:0bc88eb15f9e7f84e8e56c14fa5735aaa488b840983f87bd79b1054190e660de
     pullPolicy: IfNotPresent
     # www-data -> uid 101
     runAsUser: 101
