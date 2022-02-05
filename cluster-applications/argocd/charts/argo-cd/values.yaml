@@ -161,10 +161,10 @@ controller:
       labels: {}
       servicePort: 8082
     serviceMonitor:
-      enabled: false
+      enabled: true
       interval: 30s
-    #   selector:
-    #     prometheus: kube-prometheus
+      selector:
+        prometheus: kube-prometheus
     #   namespace: monitoring
     #   additionalLabels: {}
     rules:
@@ -222,10 +222,10 @@ dex:
       annotations: {}
       labels: {}
     serviceMonitor:
-      enabled: false
+      enabled: true
       interval: 30s
-      # selector:
-      #   prometheus: kube-prometheus
+      selector:
+        prometheus: kube-prometheus
       # namespace: monitoring
       # additionalLabels: {}
 
@@ -553,10 +553,10 @@ server:
       labels: {}
       servicePort: 8083
     serviceMonitor:
-      enabled: false
+      enabled: true
       interval: 30s
-    #   selector:
-    #     prometheus: kube-prometheus
+      selector:
+        prometheus: kube-prometheus
     #   namespace: monitoring
     #   additionalLabels: {}
 
@@ -932,10 +932,10 @@ repoServer:
       labels: {}
       servicePort: 8084
     serviceMonitor:
-      enabled: false
+      enabled: true
       interval: 30s
-    #   selector:
-    #     prometheus: kube-prometheus
+      selector:
+        prometheus: kube-prometheus
     #   namespace: monitoring
     #   additionalLabels: {}
 
