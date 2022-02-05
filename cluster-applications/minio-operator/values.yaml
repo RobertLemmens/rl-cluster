@@ -15,7 +15,7 @@ operator:
     runAsNonRoot: true
     fsGroup: 1000
   nodeSelector: 
-    node_number: 2
+    node_number: "2"
   affinity: {}
   tolerations: []
   resources:
@@ -32,7 +32,7 @@ console:
   imagePullSecrets: []
   replicaCount: 1
   nodeSelector: 
-    node_number: 2
+    node_number: "2"
   affinity: {}
   tolerations: []
   resources: {}
@@ -83,7 +83,7 @@ tenants:
         ## indicated key-value pairs as labels.
         ## Read more here: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
         nodeSelector:
-          node_number: 2
+          node_number: "2"
         ## Affinity settings for MinIO pods. Read more about affinity
         ## here: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity.
         affinity: {}
@@ -160,7 +160,7 @@ tenants:
       ## indicated key-value pairs as labels.
       ## Read more here: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
       nodeSelector: 
-          node_number: 2
+          node_number: "2"
       ## Affinity settings for Tenant Console Pods. Read more about affinity
       ## here: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity.
       affinity: {}
