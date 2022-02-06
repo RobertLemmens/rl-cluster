@@ -7,6 +7,8 @@ kubectl create namespace ingress-nginx
 kubectl create namespace tekton-pipelines
 kubectl create namespace loki
 kubectl create namespace minio
+kubectl create namespace tools
+kubectl create namespace jaeger
 
 helm dependency update ./cluster-applications/argocd/charts/argo-cd
 helm install argo-cd ./cluster-applications/argocd/charts/argo-cd -n argocd
@@ -16,6 +18,7 @@ kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
 
 # wait for nginx
+sleep 10
 echo '
   apiVersion: v1
   kind: ConfigMap

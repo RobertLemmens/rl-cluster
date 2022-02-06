@@ -1,0 +1,11 @@
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+pgadmin4:
+  persistentVolume:
+    size: 1Gi
+  env:
+    email: postgres@postgres.nl
