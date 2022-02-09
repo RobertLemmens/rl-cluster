@@ -5,8 +5,8 @@ kubectl create namespace argocd
 kubectl create namespace rl-cluster
 kubectl create namespace ingress-nginx
 kubectl create namespace tekton-pipelines
-kubectl create namespace loki
-kubectl create namespace minio
+#kubectl create namespace loki
+#kubectl create namespace minio
 kubectl create namespace tools
 kubectl create namespace jaeger
 
@@ -18,7 +18,7 @@ kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
 
 # wait for nginx
-sleep 10
+sleep 30
 echo '
   apiVersion: v1
   kind: ConfigMap
