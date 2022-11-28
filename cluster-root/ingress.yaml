@@ -11,6 +11,14 @@ spec:
     path: charts/ingress-nginx
     repoURL: https://github.com/kubernetes/ingress-nginx.git
     targetRevision: HEAD
+    helm:
+      parameters:
+      - name: controller.metrics.enabled
+        value: "true"
+      - name: controller.metrics.prometheusRule.enabled
+        value: "true"
+      - name: controller.metrics.serviceMonitor.enabled
+        value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
