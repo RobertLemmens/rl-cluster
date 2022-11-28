@@ -22,7 +22,7 @@ kubectl create namespace jaeger
 curl https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml -o cluster-applications/tekton/pipelines.yaml
 curl https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml -o cluster-applications/tekton/triggers.yaml
 curl https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml -o cluster-applications/tekton/interceptors.yaml
-curl https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml -o cluster-applications/dashboard.yaml
+curl https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml -o cluster-applications/tekton/dashboard.yaml
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
