@@ -15,8 +15,6 @@ spec:
       parameters:
       - name: controller.metrics.enabled
         value: "true"
-      - name: controller.metrics.prometheusRule.enabled
-        value: "true"
       - name: controller.metrics.serviceMonitor.enabled
         value: "true"
   destination:
