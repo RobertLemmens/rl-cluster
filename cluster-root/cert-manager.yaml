@@ -10,7 +10,7 @@ spec:
   source:
     chart: bitnami/cert-manager
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: HEAD
+    targetRevision: 1.10.1
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
