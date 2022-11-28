@@ -5,10 +5,7 @@ kubectl create namespace argocd
 kubectl create namespace rl-cluster
 kubectl create namespace ingress-nginx
 kubectl create namespace tekton-pipelines
-#kubectl create namespace loki
-#kubectl create namespace minio
-kubectl create namespace tools
-kubectl create namespace jaeger
+kubectl create namespace knative
 
 # git clone https://github.com/argoproj/argo-helm.git 
 # helm dependency update argo-helm/charts/argo-cd
@@ -23,6 +20,9 @@ curl https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
 curl https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml -o cluster-applications/tekton/triggers.yaml
 curl https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml -o cluster-applications/tekton/interceptors.yaml
 curl https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml -o cluster-applications/tekton/dashboard.yaml
+
+# Same for knative 
+curl https://github.com/knative/operator/releases/download/knative-v1.8.1/operator.yaml -o cluster-applications/knative/operator.yaml
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
