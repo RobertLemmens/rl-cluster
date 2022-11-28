@@ -9,7 +9,7 @@ spec:
   project: rl-cluster
   source:
     chart: cert-manager
-    repoURL: https://charts.bitnami.com/bitnami
+    repoURL: https://charts.jetstack.io
     targetRevision: v1.10.1
   destination:
     server: https://kubernetes.default.svc
