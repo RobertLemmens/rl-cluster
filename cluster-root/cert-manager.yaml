@@ -8,8 +8,8 @@ metadata:
 spec:
   project: rl-cluster
   source:
-    path: deploy/charts/cert-manager
-    repoURL: https://github.com/cert-manager/cert-manager.git
+    chart: bitnami/cert-manager
+    repoURL: https://charts.bitnami.com/bitnami
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
