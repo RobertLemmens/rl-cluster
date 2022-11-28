@@ -14,6 +14,7 @@ git clone https://github.com/argoproj/argo-helm.git
 helm dependency update argo-helm/charts/argo-cd
 helm install argo-cd argo-helm/charts/argo-cd -n argocd
 kubectl rollout status deployment argo-cd-argocd-server -n argocd
+rm -rf argo-helm
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
