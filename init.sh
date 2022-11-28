@@ -22,7 +22,7 @@ curl https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors
 curl https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml -o cluster-applications/tekton/dashboard.yaml
 
 # Same for knative 
-curl https://github.com/knative/operator/releases/download/knative-v1.8.1/operator.yaml -o cluster-applications/knative/operator.yaml
+curl -L "https://github.com/knative/operator/releases/download/knative-v1.8.1/operator.yaml" -o cluster-applications/knative/operator.yaml
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
