@@ -17,6 +17,8 @@ spec:
         value: "true"
       - name: controller.metrics.serviceMonitor.enabled
         value: "true"
+      - name: controller.metrics.serviceMonitor.additionalLabels.release
+        value: "prometheus"
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
