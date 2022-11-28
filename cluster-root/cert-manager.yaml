@@ -11,6 +11,10 @@ spec:
     chart: cert-manager
     repoURL: https://charts.jetstack.io
     targetRevision: v1.10.1
+    helm:
+      parameters:
+      - name: installCRDs
+        value: true
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
