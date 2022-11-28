@@ -11,6 +11,10 @@ spec:
     chart: jaeger-operator
     repoURL: https://jaegertracing.github.io/helm-charts
     targetRevision: 2.37.0
+    helm:
+      parameters:
+      - name: rbac.clusterRole
+        value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: rl-cluster
