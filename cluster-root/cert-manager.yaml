@@ -8,7 +8,7 @@ metadata:
 spec:
   project: rl-cluster
   source:
-    chart: bitnami/cert-manager
+    chart: cert-manager
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 1.10.1
   destination:
