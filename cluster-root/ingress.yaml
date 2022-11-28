@@ -19,6 +19,8 @@ spec:
         value: "true"
       - name: controller.metrics.serviceMonitor.additionalLabels.release
         value: "prometheus"
+      - name: controller.metrics.serviceMonitor.namespace
+        value: "rl-cluster"
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
