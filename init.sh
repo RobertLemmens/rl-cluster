@@ -10,8 +10,9 @@ kubectl create namespace tekton-pipelines
 kubectl create namespace tools
 kubectl create namespace jaeger
 
-helm dependency update ./cluster-applications/argocd/charts/argo-cd
-helm install argo-cd ./cluster-applications/argocd/charts/argo-cd -n argocd
+git clone https://github.com/argoproj/argo-helm.git 
+helm dependency update argo-helm/charts/argo-cd
+helm install argo-cd argo-helm/charts/argo-cd -n argocd
 kubectl rollout status deployment argo-cd-argocd-server -n argocd
 
 kubectl apply -f project.yaml

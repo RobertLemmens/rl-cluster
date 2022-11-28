@@ -9,7 +9,7 @@ spec:
   project: rl-cluster
   source:
     path: charts/argo-cd
-    repoUrl: https://github.com/argoproj/argo-helm.git
+    repoURL: https://github.com/argoproj/argo-helm.git
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
@@ -31,7 +31,7 @@ spec:
   project: rl-cluster
   source:
     path: charts/argo-rollouts
-    repoUrl: https://github.com/argoproj/argo-helm.git
+    repoURL: https://github.com/argoproj/argo-helm.git
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
