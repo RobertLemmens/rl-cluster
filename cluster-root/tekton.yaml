@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: loki
+  name: tekton
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: rl-cluster
   source:
-    path: cluster-applications/loki-stack
+    path: cluster-applications/tekton
     repoURL: https://github.com/RobertLemmens/rl-cluster.git
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: loki
+    namespace: tekton-pipelines
   syncPolicy:
     automated:
-      selfHeal: true
+      selfHeal: false
       prune: true
       allowEmpty: true

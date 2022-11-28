@@ -10,11 +10,19 @@ kubectl create namespace tekton-pipelines
 kubectl create namespace tools
 kubectl create namespace jaeger
 
-git clone https://github.com/argoproj/argo-helm.git 
-helm dependency update argo-helm/charts/argo-cd
-helm install argo-cd argo-helm/charts/argo-cd -n argocd
-kubectl rollout status deployment argo-cd-argocd-server -n argocd
-rm -rf argo-helm
+# git clone https://github.com/argoproj/argo-helm.git 
+# helm dependency update argo-helm/charts/argo-cd
+# helm install argo-cd argo-helm/charts/argo-cd -n argocd
+# kubectl rollout status deployment argo-cd-argocd-server -n argocd
+# rm -rf argo-helm
+
+
+# Download the latest tekton (at time of writing, they did not supply help repo's or install yamls in their git repo, only release page)
+# these are safe to commit - so we update then every time we run this script basically
+curl https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml -o cluster-applications/tekton/pipelines.yaml
+curl https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml -o cluster-applications/tekton/triggers.yaml
+curl https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml -o cluster-applications/tekton/interceptors.yaml
+curl https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml -o cluster-applications/dashboard.yaml
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
