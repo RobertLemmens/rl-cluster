@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jaeger-operator
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: rl-cluster
+  source:
+    chart: jaeger-operator
+    repoURL: https://jaegertracing.github.io/helm-charts
+    targetRevision: 2.37.0
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rl-cluster
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jaeger-instance
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: rl-cluster
+  source:
+    path: cluster-applications/jaeger
+    repoURL: https://github.com/RobertLemmens/rl-cluster.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rl-cluster
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
