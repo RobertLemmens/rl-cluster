@@ -18,14 +18,14 @@ kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
 
 # wait for nginx
-sleep 30
-echo '
-  apiVersion: v1
-  kind: ConfigMap
-  data:
-    enable-opentracing: "true"
-    jaeger-collector-host: simplest-agent.jaeger.svc.cluster.local              
-  metadata:
-    name: ingress-nginx-controller
-    namespace: ingress-nginx
-  ' | kubectl replace -f -
+# sleep 30
+# echo '
+#   apiVersion: v1
+#   kind: ConfigMap
+#   data:
+#     enable-opentracing: "true"
+#     jaeger-collector-host: simplest-agent.jaeger.svc.cluster.local              
+#   metadata:
+#     name: ingress-nginx-controller
+#     namespace: ingress-nginx
+#   ' | kubectl replace -f -
