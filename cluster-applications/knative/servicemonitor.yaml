@@ -59,7 +59,7 @@ metadata:
   labels:
     app: webhook
   name: webhook
-  namespace: knative-serving
+  namespace: rl-cluster
 spec:
   endpoints:
   - interval: 30s
@@ -128,7 +128,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: imc-controller
-  namespace: knative-eventing
+  namespace: rl-cluster
 spec:
   selector:
     matchLabels:
