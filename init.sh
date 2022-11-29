@@ -6,6 +6,8 @@ kubectl create namespace rl-cluster
 kubectl create namespace ingress-nginx
 kubectl create namespace tekton-pipelines
 kubectl create namespace knative
+kubectl create namespace knative-serving
+kubectl create namespace knative-eventing
 
 # git clone https://github.com/argoproj/argo-helm.git 
 # helm dependency update argo-helm/charts/argo-cd

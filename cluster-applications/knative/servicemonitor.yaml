@@ -5,14 +5,14 @@ metadata:
   labels:
     app: controller
   name: controller
-  namespace: rl-cluster
+  namespace: knative-serving
 spec:
   endpoints:
   - interval: 30s
     port: http-metrics
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-serving
   selector:
     matchLabels:
       app: controller
@@ -23,14 +23,14 @@ metadata:
   labels:
     app: autoscaler
   name: autoscaler
-  namespace: rl-cluster
+  namespace: knative-serving
 spec:
   endpoints:
   - interval: 30s
     port: http-metrics
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-serving
   selector:
     matchLabels:
       app: autoscaler
@@ -41,14 +41,14 @@ metadata:
   labels:
     app: activator
   name: activator
-  namespace: rl-cluster
+  namespace: knative-serving
 spec:
   endpoints:
   - interval: 30s
     port: http-metrics
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-serving
   selector:
     matchLabels:
       app: activator
@@ -59,14 +59,14 @@ metadata:
   labels:
     app: webhook
   name: webhook
-  namespace: rl-cluster
+  namespace: knative-serving
 spec:
   endpoints:
   - interval: 30s
     port: http-metrics
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-serving
   selector:
     matchLabels:
       app: webhook
@@ -77,14 +77,14 @@ metadata:
   labels:
     app: broker-filter
   name: broker-filter
-  namespace: rl-cluster
+  namespace: knative-eventing
 spec:
   endpoints:
   - interval: 30s
     port: http-metrics
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-eventing
   selector:
     matchLabels:
       eventing.knative.dev/brokerRole: filter
@@ -95,14 +95,14 @@ metadata:
   labels:
     app: broker-ingress
   name: broker-ingress
-  namespace: rl-cluster
+  namespace: knative-eventing
 spec:
   endpoints:
   - interval: 30s
     port: http-metrics
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-eventing
   selector:
     matchLabels:
       eventing.knative.dev/brokerRole: ingress
@@ -113,14 +113,14 @@ metadata:
   name: eventing-controller
   labels:
     app: eventing-controller
-  namespace: rl-cluster
+  namespace: knative-eventing
 spec:
   selector:
     matchLabels:
       app: eventing-controller
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-eventing
   podMetricsEndpoints:
   - port: metrics
 ---
@@ -128,14 +128,14 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: imc-controller
-  namespace: rl-cluster
+  namespace: knative-eventing
 spec:
   selector:
     matchLabels:
       messaging.knative.dev/role: controller
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-eventing
   podMetricsEndpoints:
   - port: metrics
 ---
@@ -143,14 +143,14 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: ping-source
-  namespace: rl-cluster
+  namespace: knative-eventing
 spec:
   selector:
     matchLabels:
       eventing.knative.dev/source: ping-source-controller
   namespaceSelector:
     matchNames:
-    - knative
+    - knative-eventing
   podMetricsEndpoints:
   - port: metrics
 ---
@@ -158,7 +158,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: apiserver-source
-  namespace: rl-cluster
+  namespace: knative-eventing
 spec:
   namespaceSelector:
     any: true
