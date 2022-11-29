@@ -4,8 +4,8 @@ metadata:
   name: knative-serving
 spec:
   ingress:
-    kourier:
+    contour:
       enabled: true
   config:
     network:
-      ingress-class: "kourier.ingress.networking.knative.dev"
+      ingress-class: "contour.ingress.networking.knative.dev"
