@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: knative-eventing-dashboards
-  namespace: knative-eventing
+  namespace: rl-cluster
   labels:
     grafana_dashboard: "true"
 data:
@@ -1984,7 +1984,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: knative-serving-dashboards
-  namespace: knative-serving
+  namespace: rl-cluster
   labels:
     grafana_dashboard: "true"
 data:
