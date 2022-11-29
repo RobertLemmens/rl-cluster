@@ -23,6 +23,9 @@ curl https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dash
 
 # Same for knative 
 curl -L "https://github.com/knative/operator/releases/download/knative-v1.8.1/operator.yaml" -o cluster-applications/knative/operator.yaml
+# try contour
+curl -L https://github.com/knative/net-contour/releases/download/knative-v1.8.0/contour.yaml -o cluster-applications/knative/network.yaml
+
 
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
