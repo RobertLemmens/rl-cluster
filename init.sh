@@ -26,6 +26,8 @@ curl -L "https://github.com/knative/operator/releases/download/knative-v1.8.1/op
 # try contour
 curl -L https://github.com/knative/net-contour/releases/download/knative-v1.8.0/contour.yaml -o cluster-applications/knative/network.yaml
 curl -L https://github.com/knative/serving/releases/download/knative-v1.8.0/serving-default-domain.yaml -o cluster-applications/knative/sslip-domain.yaml
+curl -L https://raw.githubusercontent.com/knative-sandbox/monitoring/main/servicemonitor.yaml -o cluster-applications/knative/servicemonitor.yaml
+
 
 
 
