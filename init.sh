@@ -3,7 +3,6 @@
 
 kubectl create namespace argocd
 kubectl create namespace rl-cluster
-kubectl create namespace ingress-nginx
 kubectl create namespace tekton-pipelines
 kubectl create namespace knative
 kubectl create namespace knative-serving
@@ -29,13 +28,10 @@ curl -L "https://github.com/knative/operator/releases/download/knative-v1.8.1/op
 curl -L https://raw.githubusercontent.com/knative-sandbox/monitoring/main/servicemonitor.yaml -o cluster-applications/knative/servicemonitor.yaml
 curl -L https://raw.githubusercontent.com/knative-sandbox/monitoring/main/grafana/dashboards.yaml -o cluster-applications/knative/grafana-dashboard.yaml
 
-
-
-
 kubectl apply -f project.yaml
 kubectl apply -f cluster-root.yaml
 
-# wait for nginx
+# wait for nginx to update ingress for jaeger 
 # sleep 30
 # echo '
 #   apiVersion: v1
