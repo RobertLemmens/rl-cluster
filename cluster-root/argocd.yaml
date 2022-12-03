@@ -11,6 +11,10 @@ spec:
     path: charts/argo-cd
     repoURL: https://github.com/argoproj/argo-helm.git
     targetRevision: HEAD
+    helm:
+      parameters:
+      - name: configs.params.server.insecure 
+        value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
