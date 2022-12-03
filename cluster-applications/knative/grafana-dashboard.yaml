@@ -3,9 +3,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: knative-eventing-dashboards
-  namespace: knative-eventing
+  namespace: rl-cluster
   labels:
-    grafana_dashboard: "true"
+    grafana_dashboard: "1"
 data:
   knative-eventing-broker.json: |
     {
@@ -1984,9 +1984,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: knative-serving-dashboards
-  namespace: knative-serving
+  namespace: rl-cluster
   labels:
-    grafana_dashboard: "true"
+    grafana_dashboard: "1"
 data:
   knative-revision-cpu-memory-metrics.json: |
     {
